@@ -26,3 +26,21 @@ assert len(words) == num_letters(rows, columns)
 
 
 ##---Part 4---##
+
+ls = []
+
+for c in range(columns - 1):
+    ls.append(data[0, c] + data[0, c + 1])
+
+for r in range(0, rows - 1):
+    ls.append(data[r, columns - 1] + data[r + 1, columns - 1])
+
+for c in range(columns - 1, 0, -1):
+    ls.append(data[rows - 1, c] + data[rows - 1, c - 1])
+
+for r in range(rows - 1, 0, -1):
+    ls.append(data[r, 0] + data[r - 1, 0])
+
+print("2-character words:", ls)
+
+
